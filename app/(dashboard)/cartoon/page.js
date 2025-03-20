@@ -63,7 +63,7 @@ async function Cartoon({ searchParams }) {
                   <p className="font-medium">{el.ct_title}</p>
                   <div className="flex items-center gap-2 text-blue-500">
                     <FaRegEye />
-                    <p className="font-medium">{el.view_count} times</p>
+                    <p className="font-medium">{el.view_count} times | {el.published_year.split('-')[0]}</p>
                   </div>
                 </div>
               </Link>

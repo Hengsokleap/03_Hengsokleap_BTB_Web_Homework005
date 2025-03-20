@@ -5,9 +5,9 @@ import { FaRegEye } from "react-icons/fa";
 import Breadpage from '@/components/Breadpage';
 import { getBookById, getCategoryBookById } from '@/service/controllerBook';
 async function ProductDetail({ searchParams }) {
-    const detail = searchParams?.id || '';
-    const catId=searchParams?.catId||'';
-    const type=searchParams?.type||'';
+    const detail = (await searchParams).id || '';
+    const catId=(await searchParams).catId||'';
+    const type=(await searchParams).type||'';
     if(type==="cartoon"){
         const data = await getCartoonById(detail);
         const category=await getCategoryCartoonById(catId);
@@ -31,9 +31,9 @@ async function ProductDetail({ searchParams }) {
                         <p className='mb-3'>By <span className='font-xl text-blue-400 font-medium'>{data.payload.ct_creator}</span> </p>
                         <div className="flex items-center gap-2 text-blue-400">
                                             <FaRegEye />
-                                            <p className="font-medium">{data.payload.view_count} times | {data.payload.published_year}</p> 
+                                            <p className="font-medium">{data.payload.view_count} times | {data.payload.published_year.split('-')[0]}</p> 
                                           </div>
-                        <p className="text-gray-600 text-sm mt-1 indent-2 min-h-[140px] w-[70%]">
+                        <p className="text-gray-600 text-sm mt-1  min-h-[140px] w-[70%]">
                             {data.payload.ct_description}
                         </p>
                     </div>
@@ -60,7 +60,7 @@ async function ProductDetail({ searchParams }) {
                     <div className=' bg-white min-h-[150] rounded-2xl shadow-lg p-5  top-[70px] z-0 '>
                         <h2 className="text-xl font-bold text-gray-800 flex mb-3"> {data.payload.book_title}</h2>
                         <p className='mb-3'>By <span className='font-xl text-blue-400'>{data.payload.book_author}</span> </p>
-                        <p className="text-gray-600 text-sm mt-1 indent-2 min-h-[140px] w-[70%]">
+                        <p className="text-gray-600 text-sm mt-1  min-h-[140px] w-[70%]">
                             {data.payload.description}
                         </p>
                     </div>

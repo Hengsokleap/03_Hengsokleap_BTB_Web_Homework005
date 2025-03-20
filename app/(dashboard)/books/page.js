@@ -46,14 +46,13 @@ async function Books({ searchParams }) {
         <div className="w-[86%] min-h-[90vh] rounded-2xl bg-white   border ">
           <div className="w-[95%] min-h-[30px]  m-auto mt-7 flex justify-between">
             <button className="p-3 bg-gray-200 text-blue-500 rounded-xl font-medium" type="button"> {book !== "" ? dataListCategory.filter(cart => String(cart.id) === String(book)).map(c => (
-              <p>{c.book_cate_name}</p>
+              <p key={c.id}>{c.book_cate_name}</p>
             )) : "Books"} </button>
             <SelectOption dataListCategory={dataListCategory} />
           </div>
           <div className='flex overflow-y-scroll flex-wrap gap-8 max-h-[79vh] mt-8 w-[95%] m-auto'>
             {filteredBooks().map((bk) => (
               <div className="flex bg-gray-100 shadow-lg rounded-2xl p-6 w-[350px] items-center gap-4 relative" key={bk.id}>
-                {/* Book Cover */}
                 <div className="flex flex-col items-center ">
                   <img
                     src={bk.image}
@@ -66,11 +65,9 @@ async function Books({ searchParams }) {
                     </button>
                   </Link>
                 </div>
-
-                {/* Book Info */}
                 <div className="flex-1">
                   <h2 className="text-md font-bold text-gray-800">  {bk.book_title}</h2>
-                  <p className="text-gray-600 text-sm mt-1 indent-2 line-clamp-2">
+                  <p className="text-gray-600 text-sm mt-1  line-clamp-2">
                     {bk.description}
                   </p>
                 </div>
