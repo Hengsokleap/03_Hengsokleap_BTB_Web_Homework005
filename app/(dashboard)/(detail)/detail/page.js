@@ -1,6 +1,7 @@
 
 import { getCartoonById, getCategoryCartoonById } from '@/service/cartoon';
 import React from 'react'
+import { FaRegEye } from "react-icons/fa";
 import Breadpage from '@/components/Breadpage';
 import { getBookById, getCategoryBookById } from '@/service/controllerBook';
 async function ProductDetail({ searchParams }) {
@@ -27,7 +28,11 @@ async function ProductDetail({ searchParams }) {
                     </div>
                     <div className=' bg-white min-h-[150] rounded-2xl shadow-lg p-5  top-[70px] z-0 '>
                         <h2 className="text-xl font-bold text-gray-800 flex mb-3"> {data.payload.ct_title}</h2>
-                        <p className='mb-3'>By <span className='font-xl text-blue-500'>{data.payload.ct_creator}</span> </p>
+                        <p className='mb-3'>By <span className='font-xl text-blue-400 font-medium'>{data.payload.ct_creator}</span> </p>
+                        <div className="flex items-center gap-2 text-blue-400">
+                                            <FaRegEye />
+                                            <p className="font-medium">{data.payload.view_count} times | {data.payload.published_year}</p> 
+                                          </div>
                         <p className="text-gray-600 text-sm mt-1 indent-2 min-h-[140px] w-[70%]">
                             {data.payload.ct_description}
                         </p>
@@ -54,7 +59,7 @@ async function ProductDetail({ searchParams }) {
                     </div>
                     <div className=' bg-white min-h-[150] rounded-2xl shadow-lg p-5  top-[70px] z-0 '>
                         <h2 className="text-xl font-bold text-gray-800 flex mb-3"> {data.payload.book_title}</h2>
-                        <p className='mb-3'>By <span className='font-xl text-blue-500'>{data.payload.book_author}</span> </p>
+                        <p className='mb-3'>By <span className='font-xl text-blue-400'>{data.payload.book_author}</span> </p>
                         <p className="text-gray-600 text-sm mt-1 indent-2 min-h-[140px] w-[70%]">
                             {data.payload.description}
                         </p>

@@ -15,7 +15,7 @@ function SelectOption({ dataListCategory }) {
 
   return (
     <div>
-      <p>Current Pathname: {pathname}</p> 
+    
       <select
         name="categories"
         id="categories"

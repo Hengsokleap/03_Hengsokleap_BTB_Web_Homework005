@@ -1,6 +1,7 @@
 import React from 'react'
 import Search from '@/components/Search';
 import Link from 'next/link';
+import Image from 'next/image';
 function Dashboard() {
     return (
         <>
@@ -15,12 +16,12 @@ function Dashboard() {
                             <Link className="relative w-[300px] min-h-[400px] bg-gray-100 group rounded-2xl" href="/books">
                             
                                 <div
-                                    className="absolute inset-0 bg-[url('@/asset/profile.jpg')] bg-cover bg-center rounded-2xl"
+                                    className="absolute inset-0 bg-[url('@/asset/books.png')] bg-cover bg-center rounded-2xl"
                                 />
 
                             
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-2xl">
-                                    <h2 className="text-white text-xl font-semibold">Profile Title</h2>
+                                    <h2 className="text-white text-xl font-semibold">Books</h2>
                                 </div>
 
                                 <button className="absolute bg-white p-3 rounded-full left-4 top-4 w-[100px] text-blue-700 font-medium">
@@ -30,16 +31,16 @@ function Dashboard() {
                             <Link className="relative w-[300px] min-h-[400px] bg-gray-100 group rounded-2xl" href="/cartoon">
                              
                                 <div
-                                    className="absolute inset-0 bg-[url('@/asset/profile.jpg')] bg-cover bg-center rounded-2xl"
+                                    className="absolute inset-0 bg-[url('@/asset/cartoon.png')] bg-cover bg-center rounded-2xl"
                                 />
 
                              
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-2xl">
-                                    <h2 className="text-white text-xl font-semibold">Profile Title</h2>
+                                    <h2 className="text-white text-xl font-semibold">Old school cartoon</h2>
                                 </div>
 
                         
-                                <button className="absolute bg-white text-blue-700 w-[100px] rounded-full font-medium p-3  left-4 top-4">
+                                <button className="absolute bg-gray-50 text-blue-700 w-[100px] rounded-full font-medium p-3  left-4 top-4">
                                     Book
                                 </button>
                             </Link>
